@@ -1,0 +1,4 @@
+extends SurveyInputBase.pug
+block input
+    select
+        option(v-for="v in options" :key="v") {{v}}

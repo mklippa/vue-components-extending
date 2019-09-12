@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img
+      alt="Vue logo"
+      src="./assets/logo.png"
+    >
+    <survey-input-text
+      question="1. What is your name?"
+      placeholder="e.g. John Smith"
+    ></survey-input-text>
+
+    <survey-input-select
+      question="2. What is your favorite UI framework?"
+      :options="['React', 'Vue.js', 'Angular']"
+    ></survey-input-select>
+
+    <survey-input-radio
+      question="3. What backend do you use?"
+      :options="['Node.js', 'Laravel', 'Ruby']"
+      name="backend"
+    ></survey-input-radio>
+    <br>
+    <button>Submit</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SurveyInputText from './components/SurveyInputText.vue'
+import SurveyInputSelect from './components/SurveyInputSelect.vue'
+import SurveyInputRadio from './components/SurveyInputRadio.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    surveyInputText: SurveyInputText,
+    surveyInputSelect: SurveyInputSelect,
+    surveyInputRadio: SurveyInputRadio
   }
 }
-</script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+</script>

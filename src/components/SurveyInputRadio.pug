@@ -1,0 +1,5 @@
+extends SurveyInputBase.pug
+block input
+    div(v-for="option in options" :key="option")
+        input(type="radio" :name="name" :value="option") 
+        | {{option}}
